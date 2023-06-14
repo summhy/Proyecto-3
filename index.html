@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <img src="./img/js-logo.webp" alt="">
+        </header>
+        <table class="table" id="miTabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Profesión</th>
+                    <th>acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan</td>
+                    <td>30</td>
+                    <td>Programador</td>
+                    <td><button onclick="eliminar(this)">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>María</td>
+                    <td>25</td>
+                    <td>Diseñadora</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <input type="text" placeholder="Nombre" id="nombre">
+            <input type="number" placeholder="Edad" id="edad">
+            <input type="text" placeholder="Profesión" id="profesion">
+            <button onclick="agregar()">Agregar</button>
+        </div>
+       
+    </body>
+
+    <script>// obtener una referencia a la tabla existente
+    const table = document.getElementById('miTabla');
+    
+    function agregar(){
+        // crear una nueva fila y sus celdas
+        const newRow = table.insertRow();
+        const nombre = document.getElementById('nombre');
+        const edad = document.getElementById('edad');
+        const profesion = document.getElementById('profesion');
+
+        const newCell1 = newRow.insertCell();
+        const newCell2 = newRow.insertCell();
+        const newCell3 = newRow.insertCell();
+    
+        // establecer el contenido de las celdas
+        newCell1.innerHTML = nombre.value;
+        newCell2.innerHTML = edad.value;
+        newCell3.innerHTML = profesion.value;
+    }
+    
+    function eliminar(boton){
+        console.dir(boton)
+    }
+    </script>
+</html>
